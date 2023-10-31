@@ -1,0 +1,100 @@
+ankit@jarves:~$ gpg --V
+invalid option "--V"
+ankit@jarves:~$ gpg --version
+gpg (GnuPG) 2.2.27
+libgcrypt 1.9.4
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GNU GPL-3.0-or-later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Home: /home/ankit/.gnupg
+Supported algorithms:
+Pubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA
+Cipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
+        CAMELLIA128, CAMELLIA192, CAMELLIA256
+Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+Compression: Uncompressed, ZIP, ZLIB, BZIP2
+ankit@jarves:~$ sudo apt-get update
+[sudo] password for ankit:
+sudo: a password is required
+ankit@jarves:~$ gpg --gen-key
+gpg (GnuPG) 2.2.27; Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Note: Use "gpg --full-generate-key" for a full featured key generation dialog.
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: network1
+Email address: network1@gmail.com
+You selected this USER-ID:
+    "network1 <network1@gmail.com>"
+
+Change (N)ame, (E)mail, or (O)kay/(Q)uit? o
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: /home/ankit/.gnupg/trustdb.gpg: trustdb created
+gpg: key 923F1FDAD66DF9DA marked as ultimately trusted
+gpg: directory '/home/ankit/.gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/home/ankit/.gnupg/openpgp-revocs.d/E25E14714F48743D5E83FC8E923F1FDAD66DF9DA.rev'
+public and secret key created and signed.
+
+pub   rsa3072 2023-10-30 [SC] [expires: 2025-10-29]
+      E25E14714F48743D5E83FC8E923F1FDAD66DF9DA
+uid                      network1 <network1@gmail.com>
+sub   rsa3072 2023-10-30 [E] [expires: 2025-10-29]
+
+ankit@jarves:~$ gpg --export -a network1 > public.key
+ankit@jarves:~$ gpg --export-secret-key -a network1 > private.key
+ankit@jarves:~$ gpg --import public.key
+gpg: key 923F1FDAD66DF9DA: "network1 <network1@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+ankit@jarves:~$ gpg --allow-secret-key-import --import private.key
+gpg: key 923F1FDAD66DF9DA: "network1 <network1@gmail.com>" not changed
+gpg: key 923F1FDAD66DF9DA: secret key imported
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg:       secret keys read: 1
+gpg:  secret keys unchanged: 1
+ankit@jarves:~$ gpg --list-keys
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: next trustdb check due at 2025-10-29
+/home/ankit/.gnupg/pubring.kbx
+------------------------------
+pub   rsa3072 2023-10-30 [SC] [expires: 2025-10-29]
+      E25E14714F48743D5E83FC8E923F1FDAD66DF9DA
+uid           [ultimate] network1 <network1@gmail.com>
+sub   rsa3072 2023-10-30 [E] [expires: 2025-10-29]
+
+ankit@jarves:~$ gpg --list-secret-keys
+/home/ankit/.gnupg/pubring.kbx
+------------------------------
+sec   rsa3072 2023-10-30 [SC] [expires: 2025-10-29]
+      E25E14714F48743D5E83FC8E923F1FDAD66DF9DA
+uid           [ultimate] network1 <network1@gmail.com>
+ssb   rsa3072 2023-10-30 [E] [expires: 2025-10-29]
+
+ankit@jarves:~$ nano net123..txt
+ankit@jarves:~$ gpg -e -u network1 -r network1 net123.txt
+gpg: can't open 'net123.txt': No such file or directory
+gpg: net123.txt: encryption failed: No such file or directory
+ankit@jarves:~$ \\wsl.localhost\Ubuntu\home\ankit\net123..txt
+\wsl.localhostUbuntuhomeankitnet123..txt: command not found
+ankit@jarves:~$ nano net123.txt
+ankit@jarves:~$ gpg -e -u network1 -r network1 net123.txt
+ankit@jarves:~$ gpg -d net123.txt.gpg
+gpg: encrypted with 3072-bit RSA key, ID BDFDB9888B4194B6, created 2023-10-30
+      "network1 <network1@gmail.com>"
+hello friends
+ankit@jarves:~$
