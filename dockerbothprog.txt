@@ -1,0 +1,367 @@
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/pro
+
+This message is shown once a day. To disable it please create the
+/home/ankit/.hushlogin file.
+ankit@jarves:~$ docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+ankit@jarves:~$ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+ankit@jarves:~$ mkdir my-website
+ankit@jarves:~$ cd my-website
+ankit@jarves:~/my-website$ wget https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip
+--2023-11-02 06:28:46--  https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip
+Resolving www.free-css.com (www.free-css.com)... 217.160.0.242, 2001:8d8:100f:f000::28f
+Connecting to www.free-css.com (www.free-css.com)|217.160.0.242|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1703902 (1.6M) [application/zip]
+Saving to: ‘oxer.zip’
+
+oxer.zip                      100%[=================================================>]   1.62M   717KB/s    in 2.3s
+
+2023-11-02 06:28:49 (717 KB/s) - ‘oxer.zip’ saved [1703902/1703902]
+
+ankit@jarves:~/my-website$ docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+ankit@jarves:~/my-website$ ls
+oxer.zip
+ankit@jarves:~/my-website$ unzip oxer.zip
+Command 'unzip' not found, but can be installed with:
+sudo apt install unzip
+ankit@jarves:~/my-website$ sudo apt install unzip
+[sudo] password for ankit:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  zip
+The following NEW packages will be installed:
+  unzip
+0 upgraded, 1 newly installed, 0 to remove and 10 not upgraded.
+Need to get 174 kB of archives.
+After this operation, 385 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 unzip amd64 6.0-26ubuntu3.1 [174 kB]
+Fetched 174 kB in 4s (48.2 kB/s)
+Selecting previously unselected package unzip.
+(Reading database ... 47743 files and directories currently installed.)
+Preparing to unpack .../unzip_6.0-26ubuntu3.1_amd64.deb ...
+Unpacking unzip (6.0-26ubuntu3.1) ...
+Setting up unzip (6.0-26ubuntu3.1) ...
+Processing triggers for man-db (2.10.2-1) ...
+ankit@jarves:~/my-website$ unzip oxer.zip
+Archive:  oxer.zip
+   creating: oxer-html/
+  inflating: oxer-html/about.html
+  inflating: oxer-html/blog.html
+  inflating: oxer-html/class.html
+   creating: oxer-html/css/
+  inflating: oxer-html/css/bootstrap.css
+  inflating: oxer-html/css/responsive.css
+  inflating: oxer-html/css/style.css
+  inflating: oxer-html/css/style.css.map
+  inflating: oxer-html/css/style.scss
+   creating: oxer-html/images/
+  inflating: oxer-html/images/about-bg.jpg
+  inflating: oxer-html/images/b1.jpg
+  inflating: oxer-html/images/b2.jpg
+  inflating: oxer-html/images/c1.jpg
+  inflating: oxer-html/images/c2.jpg
+  inflating: oxer-html/images/client1.png
+  inflating: oxer-html/images/client2.png
+  inflating: oxer-html/images/facebook.png
+  inflating: oxer-html/images/footer-img.jpg
+  inflating: oxer-html/images/hero-bg.jpg
+  inflating: oxer-html/images/instagram.png
+  inflating: oxer-html/images/left-angle.png
+  inflating: oxer-html/images/left-black-arrow.png
+  inflating: oxer-html/images/linkedin.png
+  inflating: oxer-html/images/location.png
+  inflating: oxer-html/images/logo.png
+  inflating: oxer-html/images/mail.png
+  inflating: oxer-html/images/menu.png
+  inflating: oxer-html/images/next-arrow.png
+  inflating: oxer-html/images/next-grey.png
+  inflating: oxer-html/images/next.png
+  inflating: oxer-html/images/play-icon.png
+  inflating: oxer-html/images/prev-arrow.png
+  inflating: oxer-html/images/prev-grey.png
+  inflating: oxer-html/images/prev.png
+  inflating: oxer-html/images/quote.png
+  inflating: oxer-html/images/right-angle.png
+  inflating: oxer-html/images/right-black-arrow.png
+  inflating: oxer-html/images/search-icon.png
+  inflating: oxer-html/images/telephone.png
+  inflating: oxer-html/images/twitter.png
+  inflating: oxer-html/images/youtube.png
+  inflating: oxer-html/index.html
+   creating: oxer-html/js/
+  inflating: oxer-html/js/bootstrap.js
+  inflating: oxer-html/js/jquery-3.4.1.min.js
+ankit@jarves:~/my-website$ ls
+oxer-html  oxer.zip
+ankit@jarves:~/my-website$ cd oxer-html
+ankit@jarves:~/my-website/oxer-html$ ls
+about.html  blog.html  class.html  css  images  index.html  js
+ankit@jarves:~/my-website/oxer-html$ cp -R * ../.
+ankit@jarves:~/my-website/oxer-html$ cd..
+cd..: command not found
+ankit@jarves:~/my-website/oxer-html$ cd ..
+ankit@jarves:~/my-website$ ls
+about.html  blog.html  class.html  css  images  index.html  js  oxer-html  oxer.zip
+ankit@jarves:~/my-website$ rm -rf oxer.zip oxer-html
+ankit@jarves:~/my-website$ ls
+about.html  blog.html  class.html  css  images  index.html  js
+ankit@jarves:~/my-website$ nano dockerfile
+ankit@jarves:~/my-website$ cat dockerfile
+From httpd:2.4
+copy . /usr/local/apache2/htdocs/
+ankit@jarves:~/my-website$ ls
+about.html  blog.html  class.html  css  dockerfile  images  index.html  js
+ankit@jarves:~/my-website$ docker build . -t my-website:latest
+[+] Building 16.4s (8/8) FINISHED                                                                        docker:default
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load build definition from dockerfile                                                               0.1s
+ => => transferring dockerfile: 86B                                                                                0.0s
+ => [internal] load metadata for docker.io/library/httpd:2.4                                                       5.9s
+ => [auth] library/httpd:pull token for registry-1.docker.io                                                       0.0s
+ => [1/2] FROM docker.io/library/httpd:2.4@sha256:4e24356b4b0aa7a961e7dfb9e1e5025ca3874c532fa5d999f13f8fc33c09d1b  9.8s
+ => => resolve docker.io/library/httpd:2.4@sha256:4e24356b4b0aa7a961e7dfb9e1e5025ca3874c532fa5d999f13f8fc33c09d1b  0.1s
+ => => sha256:c1a8c8567b78fc222c60d83831081d5578fd80e6c30ee0bcf8a79019824301a1 178B / 178B                         0.8s
+ => => sha256:10b9ab03bf458e12adc435ae235b1f58f473fea23c2cdf6d88407d92a4a51c41 4.20MB / 4.20MB                     2.2s
+ => => sha256:74dbedf7ddc012b3398b2c645974f1f6e30a9592fef541d02faf456e40b67bc4 31.40MB / 31.40MB                   7.2s
+ => => sha256:4e24356b4b0aa7a961e7dfb9e1e5025ca3874c532fa5d999f13f8fc33c09d1b7 1.86kB / 1.86kB                     0.0s
+ => => sha256:d70861224a52d0175c4b485ef7b70f56125f2c74d8a489a9a8ca10e3656929c9 1.37kB / 1.37kB                     0.0s
+ => => sha256:7f6a969e81a54d01e2fc08fd45025badf8f2418d3530a3a484b77ab826a1b4a7 9.09kB / 9.09kB                     0.0s
+ => => extracting sha256:c1a8c8567b78fc222c60d83831081d5578fd80e6c30ee0bcf8a79019824301a1                          0.0s
+ => => sha256:6a3b76b70f7385a99e72877fac4d1e00f4466859ed3ea50891bab80908e22c0b 296B / 296B                         1.3s
+ => => extracting sha256:10b9ab03bf458e12adc435ae235b1f58f473fea23c2cdf6d88407d92a4a51c41                          0.5s
+ => => extracting sha256:74dbedf7ddc012b3398b2c645974f1f6e30a9592fef541d02faf456e40b67bc4                          2.2s
+ => => extracting sha256:6a3b76b70f7385a99e72877fac4d1e00f4466859ed3ea50891bab80908e22c0b                          0.0s
+ => [internal] load build context                                                                                  0.1s
+ => => transferring context: 2.15MB                                                                                0.1s
+ => [2/2] COPY . /usr/local/apache2/htdocs/                                                                        0.5s
+ => exporting to image                                                                                             0.0s
+ => => exporting layers                                                                                            0.0s
+ => => writing image sha256:e462742ef9fe1b97af72fd6b4f39a5f64c1bcbf344471973ec4c6721aca74021                       0.0s
+ => => naming to docker.io/library/my-website:latest                                                               0.0s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+ankit@jarves:~/my-website$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+my-website    latest    e462742ef9fe   15 seconds ago   170MB
+nginx         latest    c20060033e06   20 hours ago     187MB
+hello-world   latest    9c7a54a9a43c   6 months ago     13.3kB
+ankit@jarves:~/my-website$ docker run -d -p 80:80 my-website:latest
+35c8508d67dec11474bbcdc0ad3d583bbf223606d9f4af190854ed9338f83f14
+ankit@jarves:~/my-website$ docker ps
+CONTAINER ID   IMAGE               COMMAND              CREATED          STATUS          PORTS                NAMES
+35c8508d67de   my-website:latest   "httpd-foreground"   22 seconds ago   Up 21 seconds   0.0.0.0:80->80/tcp   goofy_bose
+ankit@jarves:~/my-website$ if config
+> ^C
+ankit@jarves:~/my-website$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.28.140.80  netmask 255.255.240.0  broadcast 172.28.143.255
+        inet6 fe80::215:5dff:fe87:be5e  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:87:be:5e  txqueuelen 1000  (Ethernet)
+        RX packets 2509  bytes 2657817 (2.6 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1103  bytes 124934 (124.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+ankit@jarves:~/my-website$ cd ..
+ankit@jarves:~$ vim dock.txt
+ankit@jarves:~$ cat dock.txt
+Microsoft Windows [Version 10.0.22621.2283]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Ankit>docker comtainer ls
+docker: 'comtainer' is not a docker command.
+See 'docker --help'
+
+C:\Users\Ankit>docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\Ankit>docker image ls
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+C:\Users\Ankit>docker container run nginix
+Unable to find image 'nginix:latest' locally
+docker: Error response from daemon: pull access denied for nginix, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+
+C:\Users\Ankit>docker container run nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+578acb154839: Pull complete
+e398db710407: Pull complete
+85c41ebe6d66: Pull complete
+7170a263b582: Pull complete
+8f28d06e2e2e: Pull complete
+6f837de2f887: Pull complete
+c1dfc7e1671e: Pull complete
+Digest: sha256:86e53c4c16a6a276b204b0fd3a8143d86547c967dc8258b3d47c3a21bb68d3c6
+Status: Downloaded newer image for nginx:latest
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2023/11/02 00:16:01 [notice] 1#1: using the "epoll" event method
+2023/11/02 00:16:01 [notice] 1#1: nginx/1.25.3
+2023/11/02 00:16:01 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+2023/11/02 00:16:01 [notice] 1#1: OS: Linux 5.15.90.1-microsoft-standard-WSL2
+2023/11/02 00:16:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/11/02 00:16:01 [notice] 1#1: start worker processes
+2023/11/02 00:16:01 [notice] 1#1: start worker process 29
+2023/11/02 00:16:01 [notice] 1#1: start worker process 30
+2023/11/02 00:16:01 [notice] 1#1: start worker process 31
+2023/11/02 00:16:01 [notice] 1#1: start worker process 32
+2023/11/02 00:16:01 [notice] 1#1: start worker process 33
+2023/11/02 00:16:01 [notice] 1#1: start worker process 34
+2023/11/02 00:16:01 [notice] 1#1: start worker process 35
+2023/11/02 00:16:01 [notice] 1#1: start worker process 36
+2023/11/02 00:16:58 [notice] 1#1: signal 2 (SIGINT) received, exiting
+2023/11/02 00:16:58 [notice] 30#30: exiting
+2023/11/02 00:16:58 [notice] 32#32: exiting
+2023/11/02 00:16:58 [notice] 33#33: exiting
+2023/11/02 00:16:58 [notice] 32#32: exit
+2023/11/02 00:16:58 [notice] 30#30: exit
+2023/11/02 00:16:58 [notice] 31#31: exiting
+2023/11/02 00:16:58 [notice] 31#31: exit
+2023/11/02 00:16:58 [notice] 33#33: exit
+2023/11/02 00:16:58 [notice] 29#29: exiting
+2023/11/02 00:16:58 [notice] 29#29: exit
+2023/11/02 00:16:58 [notice] 36#36: exiting
+2023/11/02 00:16:58 [notice] 35#35: exiting
+2023/11/02 00:16:58 [notice] 35#35: exit
+2023/11/02 00:16:58 [notice] 36#36: exit
+2023/11/02 00:16:58 [notice] 34#34: exiting
+2023/11/02 00:16:58 [notice] 34#34: exit
+2023/11/02 00:16:58 [notice] 1#1: signal 14 (SIGALRM) received
+2023/11/02 00:16:58 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/11/02 00:16:58 [notice] 1#1: worker process 34 exited with code 0
+2023/11/02 00:16:58 [notice] 1#1: signal 29 (SIGIO) received
+2023/11/02 00:16:58 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/11/02 00:16:58 [notice] 1#1: worker process 29 exited with code 0
+2023/11/02 00:16:58 [notice] 1#1: worker process 30 exited with code 0
+2023/11/02 00:16:58 [notice] 1#1: worker process 32 exited with code 0
+2023/11/02 00:16:58 [notice] 1#1: worker process 35 exited with code 0
+2023/11/02 00:16:58 [notice] 1#1: signal 29 (SIGIO) received
+2023/11/02 00:16:58 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/11/02 00:16:58 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/11/02 00:16:58 [notice] 1#1: worker process 33 exited with code 0
+2023/11/02 00:16:58 [notice] 1#1: signal 29 (SIGIO) received
+2023/11/02 00:16:58 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/11/02 00:16:58 [notice] 1#1: worker process 31 exited with code 0
+2023/11/02 00:16:58 [notice] 1#1: worker process 36 exited with code 0
+2023/11/02 00:16:58 [notice] 1#1: exit
+
+C:\Users\Ankit>docker container run hello
+Unable to find image 'hello:latest' locally
+docker: Error response from daemon: pull access denied for hello, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+
+C:\Users\Ankit>docker container run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+719385e32844: Pull complete
+Digest: sha256:88ec0acaa3ec199d3b7eaf73588f4518c25f9d34f58ce9a0df68429c5af48e8d
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+
+C:\Users\Ankit>docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+nginx         latest    c20060033e06   20 hours ago   187MB
+hello-world   latest    9c7a54a9a43c   6 months ago   13.3kB
+
+C:\Users\Ankit>docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\Ankit>docker container ls -a
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+6d1550f5f77b   hello-world   "/hello"   6 minutes ago   Exited (0) 6 minutes ago             tender_hypatia
+
+C:\Users\Ankit>docker container rm 6d1550f5f77b
+6d1550f5f77b
+
+C:\Users\Ankit>docker container ls -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\Ankit>
+C:\Users\Ankit>
+C:\Users\Ankit>
+C:\Users\Ankit>docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\Ankit>pwd
+'pwd' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Ankit>mkdir my-website
+
+C:\Users\Ankit>cd my-website
+
+C:\Users\Ankit\my-website>wget https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip
+'wget' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Ankit\my-website>wget https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip
+'wget' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Ankit\my-website>docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\Ankit\my-website>nano dockerfile
+'nano' is not recognized as an internal or external command,
+operable program or batch file.
